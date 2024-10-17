@@ -140,9 +140,10 @@ article p {
   padding-left: 16px;
   width: 29%; /* Account for whitespace gap from display: inline-block */
 }
-
+/*  headline class is never used  */
 .side-by-side .column:last-child .headline {
   font-size: 18px;
+  border: 2px solid red;
 }
 
 .three-col {
@@ -173,7 +174,7 @@ article p {
 }
 
 .newsletter {
-  position: absolute;
+  /* position: absolute; */
   left: 0;
   bottom: 0;
   height: 60px;
@@ -206,31 +207,31 @@ article p {
       <nav class="menu">
         <a href="#">Home</a>
         <a href="#">Politics</a>
-        <a href="#" tabindex="-1">Business</a>
+        <!-- removed tab index -->
+        <a href="#">Business</a>
         <a href="#">Entertainment</a>
         <a href="#">Sports</a>
-        <a href="#" class="btn-search pull-right"><img src="https://raw.githubusercontent.com/udacity/ud891/2de2a0688c68809a3b453db3a24b1a59e8401459/lesson2-focus/02-dom-order/images/search.svg" alt="Search" />Search</a> 
-
+        <!-- why do you have a link on an image that says search?  -->
+         <!--  
+        <a href="#" class="btn-search pull-right">
+          <img src="https://raw.githubusercontent.com/udacity/ud891/2de2a0688c68809a3b453db3a24b1a59e8401459/lesson2-focus/02-dom-order/images/search.svg" alt="Search" />
+          Search</a> 
+        -->
       </nav>
     </div>
   </header>
-  <div class="newsletter">
-    <div class="container">
-      <h3>Like the Funion? Consider joining our newsletter!</h3>
-      <input type="text">
-      <button type="button" onfocus="getFocus()">Sign up</button></div>
-      
-    </div>
-  </div>
+  
   <main class="container">
-    <h2 class="offscreen">Top story</h2>
+    <!-- make the heading visible -->
+    <h2 >Top story</h2>
     <article class="main-story">
       <img class="pull-right" src="https://github.com/udacity/ud891/blob/gh-pages/lesson2-focus/02-dom-order/images/cat.jpg?raw=true" alt="A cat staring menacingly off into space">
       <div class="info">
-        <h3 class="headline">Study shows 9 out of 10 cats quietly judging their owners as they sleep</h3>
+        <!-- removed all headline class -->
+        <h3 >Study shows 9 out of 10 cats quietly judging their owners as they sleep</h3>
         <p>
           GRAND RAPIDS, MILorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-          aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <a href="#">Read More</a>
+          aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <a href="#" aria-label="Read more about Study shows 9 out of 10 cats quietly judging their owners as they sleep" >Read More</a>
           
         </p>
       </div>
@@ -243,7 +244,9 @@ article p {
         </div>
         <article>
           <h3 class="headline">Bee wonders if maybe everyone else is a drone and he's the only one who has it "figured out."</h3>
-          <p><a href="#" tabindex="1"><b>Read More</b></a></p>
+          <!-- remove tabindex -->
+           <!-- change bold to strong -->
+          <p><a href="#" aria-label="Read more about Bee wonders if maybe everyone else is a drone"  ><strong>Read More</strong></a></p>
           <img src="https://github.com/udacity/ud891/blob/gh-pages/lesson2-focus/02-dom-order/images/bee.jpg?raw=true" alt="A bee on top of a flower" />
         </article>
       </div>
@@ -254,7 +257,7 @@ article p {
             <h3 class="headline">Telephone booths. How is this still a thing?</h3>
             <p>
               LONDON-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-              irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <a href="#">Read More</a>
+              irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <a href="#"  aria-label="Read more 'Telephone Booths, Is this still a thing?'" >Read More</a>
             </p>
           </div>
         </article>
@@ -268,28 +271,42 @@ article p {
         <article>
           <img src="https://github.com/udacity/ud891/blob/gh-pages/lesson2-focus/02-dom-order/images/dog.jpg?raw=true" alt="A dog at a desk looks up at a laptop and mouse" />
           <div class="info">
-            <h3 class="headline">Turn man's best friend into man's best personal assistant. <a href="#">Read More</a></h3>
+            <!-- headline class does nothing-->
+             <!-- Read More should not be part of the header -->
+            <h3>Turn man's best friend into man's best personal assistant.</h3> <a href="#"  aria-label="Read more Turn man's best friend into man's best personal assistant">Read More</a>
           </div>
         </article>
         <article>
           <img src="https://github.com/udacity/ud891/blob/gh-pages/lesson2-focus/02-dom-order/images/coffee.jpg?raw=true" alt="A cup of coffee on a table" />
           <div class="info">
-            <h3 class="headline">San Franciscans are losing their minds over this third wave, artisanal, fair trade, handcrafted, locavore coffee. <a href="#">Read More</a></h3>
+            <!-- Read More should not be part of the header -->
+            <h3 class="headline">San Franciscans are losing their minds over this third wave, artisanal, fair trade, handcrafted, locavore coffee. </h3><a href="#"  aria-label="Read more about San Francisans losing their minds">Read More</a>
         </article>
         <article>
           <img src="https://github.com/udacity/ud891/blob/gh-pages/lesson2-focus/02-dom-order/images/football.jpg?raw=true" alt="A football player hands the ball off to another player" />
           <div class="info">
-            <h3 class="headline">Sportsball team scores a touchpoint to win the big race. <a href="#">Read More</a></h3>
+            <!-- Read More should not be part of the header -->
+            <h3 class="headline">Sportsball team scores a touchpoint to win the big race. </h3><a href="#"  aria-label="Read more about sportsball team winning">Read More</a>
           </div>
         </article>
       </div>
     </div>
     
   </main>
-  <!--   stuff can be added here :)
+ 
+         
+  </div>
   <footer>
+<div class="newsletter">
+    <div class="container">
+      <!-- Like the Funion is not a heading, it is a label -->
+      <label for="likeFunion">Like the Funion? Consider joining our newsletter!</label>
+      <input id="likeFunion" type="text" placeholder="test@email">
+      <button type="button" onclick="getFocus()" aria-label="Button to submit email for signup. opens a new page">Sign up</button></div>
+      
+    </div>
   </footer>
-  -->
+ 
   
   <script>
     function getFocus() {
